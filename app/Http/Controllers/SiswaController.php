@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class SiswaController extends Controller
 {
     public function index(){
-        return 'Hi SIswa';
+        $data_siswa= \App\Models\Siswa::all();
+        return view('siswa.index',['data_siswa'=>$data_siswa]);
     }
 }
