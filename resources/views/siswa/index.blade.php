@@ -7,17 +7,16 @@
 <body>
     
     <div class="container">
+    @if(session('sukses'))
+    <div class="alert alert-success" role="alert">{{session('sukses')}} </div>
+    @endif
         <div class="row">
             <div class="col-6">
                 <h1>Data Siswa</h1>
             </div>
             <div class="col-6">
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah data siswa</button>
-                
-            
             </div>
-            
-            
             <table class="table table-hover">
                 <tr>
                     <th>NAMA DEPAN</th>
@@ -51,19 +50,20 @@
                 </div>
                 <div class="modal-body">
                     <form action="/siswa/create" method="POST">
+                    {{csrf_field()}}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Depan</label>
-                            <input type="text" class="form-control" id="nama_depan" aria-describedby="emailHelp">
+                            <input name="nama_depan" type="text" class="form-control" id="nama_depan" aria-describedby="emailHelp">
                         </div>
 
                         <div class="form-group">
                             <label for="exampleInputEmail1">Nama Belakang</label>
-                            <input type="text" class="form-control" id="nama_belakang" aria-describedby="emailHelp">
+                            <input name="nama_belakang" type="text" class="form-control" id="nama_belakang" aria-describedby="emailHelp">
                         </div>
                         
                         <div class="form-group">
                         <label for="exampleInputEmail1">Jenis Kelamin</label>
-                        <select class="custom-select">
+                        <select name="jenis_kelamin" class="custom-select">
                             <option value="L">Laki-laki</option>
                             <option value="P">Perempuan</option>
                         </select>
@@ -71,15 +71,13 @@
                         
                         <div class="form-group">
                             <label for="exampleInputEmail1">Agama</label>
-                            <input type="text" class="form-control" id="agama" aria-describedby="emailHelp">
+                            <input name="agama" type="text" class="form-control" id="agama" aria-describedby="emailHelp">
                         </div>
 
                         <div class="form-group">
                             <label for="alamat">Alamat</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea  name="alamat" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                         </div>
-                        
-                        
                 </div>
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
