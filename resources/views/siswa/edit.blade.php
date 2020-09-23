@@ -11,32 +11,8 @@
     <div class="alert alert-success" role="alert">{{session('sukses')}} </div>
     @endif
         <div class="row">
-            <div class="col-6">
-                <h1>Data Siswa</h1>
-            </div>
-            <div class="col-6">
-                <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah data siswa</button>
-            </div>
-            <table class="table table-hover">
-                <tr>
-                    <th>NAMA DEPAN</th>
-                    <th>NAMA BELAKANG</th>
-                    <th>JENIS KELAMIN</th>
-                    <th>AGAMA</th>
-                    <th>ALAMAT</th>
-                    <th>AKSI</th>
-                </tr>
-                @foreach($data_siswa as $siswa)
-                <tr>
-                    <td>{{$siswa->nama_depan}}</td>
-                    <td>{{$siswa->nama_belakang}}</td>
-                    <td>{{$siswa->jenis_kelamin}}</td>
-                    <td>{{$siswa->agama}}</td>
-                    <td>{{$siswa->alamat}}</td>
-                    <td><a href="/siswa/{{$siswa->id}}/edit" class="btn btn-warning btn-sm">Edit</a></td>
-                </tr>
-                @endforeach
-            </table>
+            
+            
         </div>
     </div>
     
